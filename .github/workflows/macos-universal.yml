@@ -71,7 +71,7 @@ jobs:
         if: ${{ env.RELEASE_COMMIT == 'true' }}
         with:
           name: workflow-upload
-          path: AlfredPinboardRust-${{ env.GITHUB_REF_NAME }}.alfredworkflow
+          path: AlfredPinboardRust-${{ github.ref_name }}.alfredworkflow
 
   release_alfred:
     name: Release Workflow
@@ -86,6 +86,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: ${{ env.RELEASE_COMMIT == 'true' }}
         with:
-          files: AlfredPinboardRust-${{ env.GITHUB_REF_NAME }}.alfredworkflow
+          files: AlfredPinboardRust-${{ github.ref_name }}.alfredworkflow
       - name: Test Env.
         run: echo ${{ env.RELEASE_COMMIT }} && echo ${{ env.GITHUB_ENV }} && echo ${{ env.RELEASE_COMMIT }}
