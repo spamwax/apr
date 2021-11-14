@@ -35,9 +35,9 @@ jobs:
           override: true
 
       - name: Set SDKROOT
-        run: echo "SDKROOT=$(xcrun -sdk macosx$OSX_SDK_VERSION --show-sdk-path)" >> $GITHUB_ENV && cat $GITHUB_ENV
+        run: echo "SDKROOT=$(xcrun -sdk macosx$OSX_SDK_VERSION --show-sdk-path)" >> $GITHUB_ENV
       - name: Set MACOSX_DEPLOYMENT_TARGET
-        run: echo "MACOSX_DEPLOYMENT_TARGET=$(xcrun -sdk macosx$OSX_SDK_VERSION --show-sdk-platform-version)" >> $GITHUB_ENV && cat $GITHUB_ENV
+        run: echo "MACOSX_DEPLOYMENT_TARGET=$(xcrun -sdk macosx$OSX_SDK_VERSION --show-sdk-platform-version)" >> $GITHUB_ENV
       - name: Build aarch64-apple-darwin (Debug)
         uses: actions-rs/cargo@v1
         if:  ${{ env.RELEASE_COMMIT != 'true' }}
@@ -87,5 +87,3 @@ jobs:
         if: ${{ env.RELEASE_COMMIT == 'true' }}
         with:
           files: AlfredPinboardRust-${{ github.ref_name }}.alfredworkflow
-      - name: Test Env.
-        run: echo ${{ env.RELEASE_COMMIT }} && echo ${{ env.GITHUB_ENV }} && echo ${{ env.RELEASE_COMMIT }}
