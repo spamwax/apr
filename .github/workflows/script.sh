@@ -56,21 +56,28 @@ run_tests() {
     $runner update
     $runner config -d
     ls -la "$alfred_workflow_data"
+    sleep 2
     ls -la "$2"
+    sleep 2
     ls -la "$2/.config"
+    sleep 2
     rm -rf "$2/.config"
+    sleep 2
 
 }
 
 # src=$(pwd)
 src="$GITHUB_WORKSPACE"
 stage=$(mktemp -d -t tmp)
+
+echo "$GITHUB_WORKSPACE == $GITHUB_REF_NAME"
 if [[ "$RELEASE_COMMIT" = "true" ]]; then
     ls -lh ./target/aarch64-apple-darwin/release/alfred-pinboard-rs
     ls -lh ./target/x86_64-apple-darwin/release/alfred-pinboard-rs
     build_alfred_bundle "$src" "$stage"
 else
     lipo -create -output alfred-pinboard-rs target/aarch64-apple-darwin/debug/alfred-pinboard-rs target/x86_64-apple-darwin/debug/alfred-pinboard-rs
+    mv ./alfred-pinboard-rs alfred-pinboard-rs-"$GITHUB_REF_NAME".alfredworkflow
     strip ./alfred-pinboard-rs || true
     chmod u+x ./alfred-pinboard-rs
     run_tests ./alfred-pinboard-rs "$GITHUB_WORKSPACE"

@@ -16,6 +16,7 @@ name: Build/Test/Release Alfred Workflow
 env:
   RELEASE_COMMIT: ${{ github.ref_type == 'tag' }}
   OSX_SDK_VERSION: 11.1
+  PINBOARD_TOKEN: ${{ secrets.PINBOARD_TOKEN }}
 
 jobs:
   build_universal:
