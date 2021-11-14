@@ -77,7 +77,6 @@ if [[ "$RELEASE_COMMIT" = "true" ]]; then
     build_alfred_bundle "$src" "$stage"
 else
     lipo -create -output alfred-pinboard-rs target/aarch64-apple-darwin/debug/alfred-pinboard-rs target/x86_64-apple-darwin/debug/alfred-pinboard-rs
-    mv ./alfred-pinboard-rs alfred-pinboard-rs-"$GITHUB_REF_NAME".alfredworkflow
     strip ./alfred-pinboard-rs || true
     chmod u+x ./alfred-pinboard-rs
     run_tests ./alfred-pinboard-rs "$GITHUB_WORKSPACE"
