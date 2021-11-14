@@ -66,7 +66,6 @@ run_tests() {
 
 }
 
-# src=$(pwd)
 src="$GITHUB_WORKSPACE"
 stage=$(mktemp -d -t tmp)
 
