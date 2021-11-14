@@ -1,0 +1,10 @@
+/target/
+**/*.rs.bk
+cmake-build-debug
+CMakeLists.txt
+auth_token.txt
+.rustfmt.toml
+build.log
+AlfredPinboardRust.alfredworkflow
+Cargo.toml.back
+run_exec.sh
