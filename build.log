@@ -1,0 +1,29 @@
+   Compiling serde v1.0.130
+   Compiling serde_derive v1.0.130
+   Compiling serde_json v1.0.67
+   Compiling regex-syntax v0.6.25
+   Compiling security-framework-sys v2.4.1
+   Compiling security-framework v2.4.1
+   Compiling native-tls v0.2.8
+   Compiling regex v1.5.4
+   Compiling env_logger v0.9.0
+   Compiling semver v0.9.0
+   Compiling serde_urlencoded v0.5.5
+   Compiling chrono v0.4.19
+   Compiling url_serde v0.2.0
+   Compiling rmp-serde v0.15.5
+   Compiling rustc_version v0.2.3
+   Compiling parking_lot_core v0.6.2
+   Compiling parking_lot v0.9.0
+   Compiling hyper v0.12.36
+   Compiling cookie_store v0.7.0
+   Compiling alfred v4.0.2
+   Compiling tokio-reactor v0.1.12
+   Compiling tokio-tcp v0.1.4
+   Compiling tokio v0.1.22
+   Compiling hyper-tls v0.3.2
+   Compiling reqwest v0.9.24
+   Compiling alfred-rs v0.6.0
+   Compiling rusty-pin v0.5.5 (https://github.com/spamwax/rusty-pin?branch=master#f21ac7e6)
+   Compiling alfred-pinboard-rs v0.16.4 (/Volumes/Home/hamid/src/learn/rust/alfred-pinboard-rs)
+    Finished release [optimized] target(s) in 1m 25s

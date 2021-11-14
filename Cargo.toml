@@ -1,0 +1,36 @@
+[package]
+name = "alfred-pinboard-rs"
+version = "0.16.4"
+authors = [ "Hamid Ghadyani <hamid@hamid.cc>",]
+
+[dependencies]
+alfred = "4.0.1"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+structopt = "0.3.15"
+semver = "1.0.4"
+failure = "0.1.8"
+if_chain = "1.0.1"
+dirs = "3.0"
+log = "0.4"
+env_logger = "0.9"
+
+[features]
+
+[dependencies.alfred-rs]
+version = "0.6"
+
+[dependencies.rusty-pin]
+git = "https://github.com/spamwax/rusty-pin"
+branch = "master"
+
+[dependencies.chrono]
+version = "0.4"
+features = [ "serde",]
+
+[profile.release]
+lto = true
+
+[package.metadata.docs.rs]
+targets = [ "x86_64-apple-ios", "x86_64-apple-darwin",]
